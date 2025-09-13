@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import AnimatedCircularGallery from "./components/CircleCardAnimation/CircleCardAnimation";
+import FullScreenZoomEffect from "./components/FullScreenZoomEffect/FullScreenZoomEffect";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       </div>
       <Hero />
       <AnimatedCircularGallery />
+      <FullScreenZoomEffect />
     </div>
   );
 }
