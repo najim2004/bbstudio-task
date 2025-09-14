@@ -41,7 +41,7 @@ function AnimatedCarousel() {
     return () => ctx.revert();
   }, []);
   return (
-    <div className="my-32 grid grid-cols-2 grid-rows-12 min-h-[50vh] max-w-6xl mx-auto gap-3 font-bdogrotesk-vf">
+    <div className="mt-20 grid grid-cols-2 grid-rows-12 min-h-[50vh] max-w-6xl mx-auto gap-3 font-bdogrotesk-vf">
       <div className="h-[660px] row-span-12 rounded-3xl overflow-hidden">
         <img
           src="https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67fd3b3b64ef722b8bd2b5c4_bg-cloud-77.avif"
@@ -60,14 +60,12 @@ function AnimatedCarousel() {
       <div className="row-span-4 rounded-3xl overflow-x-auto scrollbar-hide">
         <div ref={marqueeRef} className=" flex items-center gap-3 ">
           {[...images, ...images].map((image, idx) => (
-            <>
-              <img
-                key={idx}
-                src={image}
-                alt=""
-                className="size-[210px] aspect-square object-cover rounded-lg"
-              />
-            </>
+            <img
+              key={idx}
+              src={image}
+              alt=""
+              className="size-[210px] aspect-square object-cover rounded-lg"
+            />
           ))}
         </div>
       </div>

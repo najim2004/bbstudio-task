@@ -1,28 +1,33 @@
 @font-face {
-  font-family: 'BDOGrotesk-VF';
-  src: url('/fonts/BDOGrotesk-VF.ttf') format('truetype');
+  font-family: "BDOGrotesk-VF";
+  src: url("/fonts/BDOGrotesk-VF.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @import "tailwindcss";
 
-.font-bdogrotesk-vf{
-  font-family: 'BDOGrotesk-VF', sans-serif;
+.font-bdogrotesk-vf {
+  font-family: "BDOGrotesk-VF", sans-serif;
 }
 
-body{
+body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
 
-/* styles.css */
 .scrollbar-hide {
-  /* Chrome, Safari, Opera */
-  -ms-overflow-style: none; /* IE 10+ */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
+}
+
+details[open] .plus-icon {
+  display: none;
+}
+details[open] .minus-icon {
+  display: flex;
 }
