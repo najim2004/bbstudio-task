@@ -31,3 +31,8 @@ details[open] .plus-icon {
 details[open] .minus-icon {
   display: flex;
 }
+
+img {
+  object-position: center;
+  object-fit: cover;
+}

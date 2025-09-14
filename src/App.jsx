@@ -5,6 +5,7 @@ import AnimatedCircularGallery from "./components/CircleCardAnimation/CircleCard
 import FullScreenZoomEffect from "./components/FullScreenZoomEffect/FullScreenZoomEffect";
 import StickyCardStack from "./components/StickyCardStack/StickyCardStack";
 import AnimatedCarousel from "./components/AnimatedCarousel/AnimatedCarousel";
+import MiddleImageZoomSection from "./components/MiddleImageZoomSection/MiddleImageZoomSection";
 import FAQSection from "./components/FAQSection/FAQSection";
 import Footer from "./components/Footer/Footer";
 
@@ -18,6 +19,7 @@ function App() {
       <AnimatedCircularGallery />
       <StickyCardStack/>
       <FullScreenZoomEffect />
+      <MiddleImageZoomSection/>
       <AnimatedCarousel/>
       <FAQSection/>
       <Footer/>

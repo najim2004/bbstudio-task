@@ -32,7 +32,7 @@ function AnimatedCarousel() {
       const width = marqueeRef.current.scrollWidth / 2;
       gsap.to(marqueeRef.current, {
         x: -width,
-        duration: 50,
+        duration: 80,
         ease: "linear",
         repeat: -1,
       });
