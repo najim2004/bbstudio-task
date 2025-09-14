@@ -22,7 +22,6 @@ function FullScreenZoomEffect() {
           start: "top top",
           end: "+=2000",
           scrub: 1,
-          markers: true,
         },
       });
 
