@@ -4,6 +4,7 @@ import Hero from "./components/Hero/Hero";
 import AnimatedCircularGallery from "./components/CircleCardAnimation/CircleCardAnimation";
 import FullScreenZoomEffect from "./components/FullScreenZoomEffect/FullScreenZoomEffect";
 import StickyCardStack from "./components/StickyCardStack/StickyCardStack";
+import AnimatedCarousel from "./components/AnimatedCarousel/AnimatedCarousel";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <AnimatedCircularGallery />
       <StickyCardStack/>
       <FullScreenZoomEffect />
+      <AnimatedCarousel/>
     </div>
   );
 }

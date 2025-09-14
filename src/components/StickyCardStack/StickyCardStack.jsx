@@ -84,7 +84,7 @@ function StickyCardStack() {
 
       <div
         ref={textContentRef}
-        className="flex justify-end font-bdogrotesk-vf translate-x-40 opacity-0 w-full text-center md:max-w-[40vw]"
+        className="flex justify-end font-bdogrotesk-vf translate-x-40 opacity-0 w-full text-center md:text-start md:max-w-[40vw]"
       >
         <h2 className="text-2xl md:text-7xl font-bold text-gray-">
           Your mental wellness journey starts now
