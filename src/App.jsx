@@ -8,6 +8,8 @@ import AnimatedCarousel from "./components/animated-carousel/AnimatedCarousel";
 import MiddleImageZoomSection from "./components/middle-image-zoom-section/MiddleImageZoomSection";
 import FAQSection from "./components/faq-section/FAQSection";
 import Footer from "./components/footer/Footer";
+import CTAButton from "./components/cta-button/CTAButton";
+import Divider from "./components/divider/Divider";
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
       <MiddleImageZoomSection />
       <AnimatedCarousel />
       <FAQSection />
+      <Divider />
       <Footer />
+      <CTAButton />
     </div>
   );
 }

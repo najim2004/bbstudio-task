@@ -7,7 +7,7 @@ function Hero() {
       <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200">
         Personal Growth
       </span>
-      <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold md:max-w-4xl w-full">
+      <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold md:max-w-[800px] w-full">
         Feel more human every day
       </h1>
       <Button className="text-base px-8 py-4 !rounded-full !text-[#415326]">

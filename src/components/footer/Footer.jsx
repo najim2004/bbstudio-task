@@ -7,10 +7,10 @@ function Footer() {
       <img
         src="https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67f55a2e134ca608203f58ec_zuno-logo-green.svg"
         alt=""
-        className="w-[85vw] object-cover hidden lg:block"
+        className="w-[85vw] object-cover hidden lg:block mx-auto"
       />
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-7 justify-between lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-7 justify-between md:gap-4">
           <div className="lg:col-span-2">
             <img
               src="https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67e725b86fdf9ee970fe1013_zuno-logo.svg"
@@ -18,7 +18,7 @@ function Footer() {
               className="h-[14px]"
             />
           </div>
-          <div className="flex border-b border-gray-200 py-4">
+          <div className="flex md:block border-b md:border-none border-gray-200 py-4 md:py-0">
             <h3 className="text-[#98a581] font-base font-medium pb-4 flex-1">
               Explore
             </h3>
@@ -27,7 +27,7 @@ function Footer() {
               <li>Learn</li>
             </ul>
           </div>
-          <div className="flex border-b border-gray-200 py-4">
+          <div className="flex md:block border-b md:border-none border-gray-200 py-4 md:py-0">
             <h3 className="flex-1 text-[#98a581] font-base font-medium pb-4">
               Company
             </h3>
@@ -38,7 +38,7 @@ function Footer() {
               <li> Contact us</li>
             </ul>
           </div>
-          <div className="flex border-b border-gray-200 py-4">
+          <div className="flex md:block border- md:border-none border-gray-200 py-4 md:py-0">
             <h3 className="flex-1 text-[#98a581] font-base font-medium pb-4">
               Follow us
             </h3>
@@ -46,7 +46,7 @@ function Footer() {
               <li>Instagram</li> <li>TikTok</li> <li>Twitter</li>
             </ul>
           </div>
-          <div className="lg:col-span-2 py-4">
+          <div className="md:col-span-4 lg:col-span-2 py-4">
             <h3 className="flex-1 text-[#98a581] font-base font-medium pb-4">
               Newsletter
             </h3>
