@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="h-screen w-screen bg-[#1f3634] flex flex-col justify-end lg:justify-between items-center font-bdogrotesk-vf">
+    <footer className="fixed bottom-0 left-0 -z-10 h-screen w-screen bg-[#1f3634] flex flex-col justify-end lg:justify-between items-center font-bdogrotesk-vf">
       <img
         src="https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67f55a2e134ca608203f58ec_zuno-logo-green.svg"
         alt=""
@@ -73,7 +73,7 @@ function Footer() {
           rights reserved.
         </p>
       </div>
-    </div>
+    </footer>
   );
 }
 

@@ -13,18 +13,21 @@ import Divider from "./components/divider/Divider";
 
 function App() {
   return (
-    <div className="w-full h-full relative">
-      <div className="sticky top-0 left-0 pt-3 px-8 lg:px-0 z-50">
-        <Navbar />
+    <div className="w-full h-full relative pb-96">
+      <div className="bg-white w-full h-full">
+        <div className="sticky top-0 left-0 pt-3 px-8 lg:px-0 z-50">
+          <Navbar />
+        </div>
+        <Hero />
+        <AnimatedCircularGallery />
+        <StickyCardStack />
+        <FullScreenZoomEffect />
+        <MiddleImageZoomSection />
+        <AnimatedCarousel />
+        <FAQSection />
+        <Divider />
       </div>
-      <Hero />
-      <AnimatedCircularGallery />
-      <StickyCardStack />
-      <FullScreenZoomEffect />
-      <MiddleImageZoomSection />
-      <AnimatedCarousel />
-      <FAQSection />
-      <Divider />
+      <div className="h-[40vh]"></div>
       <Footer />
       <CTAButton />
     </div>
