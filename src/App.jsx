@@ -26,10 +26,10 @@ function App() {
         <AnimatedCarousel />
         <FAQSection />
         <Divider />
+        <CTAButton />
       </div>
       <div className="h-[40vh]"></div>
       <Footer />
-      <CTAButton />
     </div>
   );
 }

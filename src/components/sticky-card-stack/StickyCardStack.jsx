@@ -67,7 +67,7 @@ function StickyCardStack() {
   return (
     <div
       ref={containerRef}
-      className="h-screen w-screen bg-[#e7e7e7] flex flex-col md:flex-row items-center justify-around px-6 gap-6 py-10 md:py-0 overflow-x-hidden"
+      className="h-screen w-screen bg-[#e7e7e7] flex flex-col md:flex-row items-center justify-center md:justify-around px-6 gap-6 py-10 md:py-0 overflow-x-hidden"
     >
       <div className="z-40 w-[80vw] md:w-[26vw] h-[55vh] flex gap-2 lg:gap-6">
         {images.map((image, idx) => (
@@ -84,7 +84,7 @@ function StickyCardStack() {
 
       <div
         ref={textContentRef}
-        className="flex justify-end font-bdogrotesk-vf translate-x-40 opacity-0 w-full md:max-w-[40vw]"
+        className="flex justify-end font-bdogrotesk-vf translate-x-40 opacity-0 w-full md:max-w-[40vw] ml-10 md:ml-0"
       >
         <h2 className="text-4xl md:text-7xl font-bold text-gray-700">
           Your mental wellness journey starts now

@@ -23,7 +23,7 @@ function MiddleImageZoomSection() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
-            end: "+=5000",
+            end: "+=4000",
             scrub: 2,
             pin: true,
           },
