@@ -13,51 +13,47 @@ function FullScreenZoomEffect() {
 
   const textContentDiv = useRef(null);
 
- useLayoutEffect(() => {
-   let ctx = gsap.context(() => {
-     const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-     const tl = gsap.timeline({
-       scrollTrigger: {
-         trigger: sectionRef.current,
-         pin: true,
-         start: isMobile ? "center center" : "top top", // 📌 mobile হলে middle থেকে trigger
-         end: "+=2000",
-         scrub: 1,
-       },
-     });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: true,
+          start: isMobile ? "center center" : "top top",
+          end: "+=2000",
+          scrub: 1,
+        },
+      });
 
-     tl.from(upperLayerBgImg.current, {
-       border: "0px",
-       duration: 0.3,
-       delay: 0.7,
-     });
-     tl.from(upperLayerBgImg.current, {
-       width: "25vw",
-       duration: 3,
-     });
-     tl.addLabel("fadeIn")
-       .from(whiteBg.current, { opacity: 0, duration: 2 }, "fadeIn")
-       .from(textContentDiv.current, { opacity: 0, duration: 1 }, "fadeIn");
-   }, sectionRef);
+      tl.from(upperLayerBgImg.current, {
+        border: "0px",
+        duration: 0.3,
+        delay: 0.7,
+      });
+      tl.from(upperLayerBgImg.current, {
+        width: "25vw",
+        duration: 3,
+      });
+      tl.addLabel("fadeIn")
+        .from(whiteBg.current, { opacity: 0, duration: 2 }, "fadeIn")
+        .from(textContentDiv.current, { opacity: 0, duration: 1 }, "fadeIn");
+    }, sectionRef);
 
-   return () => ctx.revert();
- }, []);
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div
+    <section
       ref={sectionRef}
       className="h-[60vh] md:h-screen w-screen relative flex justify-center items-center"
     >
-      {/* 1st or parent bg image */}
-
       <div className="relative h-full w-full flex justify-center items-center bg-[url('https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67f9e24c2d1b01e097179829_bg-cloud-71.avif')] bg-no-repeat bg-cover bg-center">
         <div
           ref={whiteBg}
           className="bg-white absolute top-0 left-0 h-full w-full"
         ></div>
-
-        {/* 2nd bg image */}
 
         <div
           ref={upperLayerBgImg}
@@ -83,7 +79,7 @@ function FullScreenZoomEffect() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

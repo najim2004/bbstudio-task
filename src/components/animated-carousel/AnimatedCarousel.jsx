@@ -41,7 +41,7 @@ function AnimatedCarousel() {
     return () => ctx.revert();
   }, []);
   return (
-    <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 grid-rows-1 mg:grid-rows-12 min-h-[50vh] max-w-6xl mx-auto gap-3 font-bdogrotesk-vf px-4 md:px-8 lg:px-0">
+    <section className="mt-20 grid grid-cols-1 lg:grid-cols-2 grid-rows-1 mg:grid-rows-12 min-h-[50vh] max-w-6xl mx-auto gap-3 font-bdogrotesk-vf px-4 md:px-8 lg:px-0">
       <div className="h-[660px] lg:row-span-12 rounded-3xl overflow-hidden">
         <img
           src="https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67fd3b3b64ef722b8bd2b5c4_bg-cloud-77.avif"
@@ -69,7 +69,7 @@ function AnimatedCarousel() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

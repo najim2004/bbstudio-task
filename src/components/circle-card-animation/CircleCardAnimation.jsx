@@ -32,12 +32,11 @@ const images = [
 ];
 
 const StaticCircularGallery = () => {
-  const radius = 35; // Circle radius in vmin
+  const radius = 35;
   const totalImages = images.length * 2;
 
   return (
-    <div className="w-full h-screen relative flex justify-center items-center bg-white">
-      {/* Text in the Center */}
+    <section className="w-full h-screen relative flex justify-center items-center bg-white">
       <div className="text-center z-10">
         <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200">
           Personal Growth
@@ -47,7 +46,6 @@ const StaticCircularGallery = () => {
         </div>
       </div>
 
-      {/* Circular Image Gallery */}
       <div className="absolute w-full h-full">
         {images.flatMap((image, index) => {
           const angleUp = ((index * 2) / totalImages) * 360;
@@ -56,7 +54,9 @@ const StaticCircularGallery = () => {
 
           const angleDown = ((index * 2 + 1) / totalImages) * 360;
           const xDown = `${radius * Math.sin((angleDown * Math.PI) / 180)}vmin`;
-          const yDown = `${-radius * Math.cos((angleDown * Math.PI) / 180)}vmin`;
+          const yDown = `${
+            -radius * Math.cos((angleDown * Math.PI) / 180)
+          }vmin`;
 
           return [
             <img
@@ -80,7 +80,7 @@ const StaticCircularGallery = () => {
           ];
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

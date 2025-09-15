@@ -1,6 +1,5 @@
-import { Minus, Plus } from "lucide-react";
 import React from "react";
-
+import FAQItem from "./FAQItem.jsx";
 const FAQs = [
   {
     question: "What is Zuno?",
@@ -34,9 +33,9 @@ const FAQs = [
   },
 ];
 
-function FAQSection() {
+const FAQSection = () => {
   return (
-    <div className="font-bdogrotesk-vf flex flex-col gap-6 max-w-6xl mx-auto px-10 my-20">
+    <section className="font-bdogrotesk-vf flex flex-col gap-6 max-w-6xl mx-auto px-10 my-20">
       <div className="text-gray-700 text-center">
         <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200">
           Questions?
@@ -44,28 +43,12 @@ function FAQSection() {
         <h1 className="text-3xl font-bold mt-4">We’re here to help</h1>
       </div>
       <div className="border-t border-b border-gray-300">
-        {FAQs.map((FAQ, idx) => (
-          <details
-            key={idx}
-            className="mb-0 border-b border-gray-300 last:border-none p-7"
-          >
-            <summary className="cursor-pointer list-none">
-              <div className="font-medium text-xl flex justify-between items-center w-full">
-                <h2>{FAQ.question}</h2>
-                <span>
-                  <Plus className="plus-icon" />
-                  <Minus className="minus-icon hidden" />
-                </span>
-              </div>
-            </summary>
-            <div className="px-0 pb-2 text-gray-500">
-              <div className="prose prose-ul:pl-4 pt-4">{FAQ.answer}</div>
-            </div>
-          </details>
+        {FAQs.map((faq, idx) => (
+          <FAQItem key={idx} faq={faq} />
         ))}
       </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default FAQSection;

@@ -14,7 +14,7 @@ import Divider from "./components/divider/Divider";
 function App() {
   return (
     <div className="w-full h-full relative pb-96">
-      <div className="bg-white w-full h-full">
+      <div className="bg-white w-full h-full relative z-50">
         <div className="sticky top-0 left-0 pt-3 px-8 lg:px-0 z-50">
           <Navbar />
         </div>
