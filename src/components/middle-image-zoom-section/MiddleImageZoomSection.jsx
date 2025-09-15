@@ -98,7 +98,7 @@ function MiddleImageZoomSection() {
         />
         <div
           ref={centerCardRef}
-          className="min-h-[60vh] w-full relative -mt-[1px] overflow-hidden z-40 rounded-4xl bg-[url(https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67f9c6586f1024288c4e6ed8_bg-cloud-64.avif)] bg-center bg-cover bg-no-repeat"
+          className="min-h-[60vh] w-full relative lg:-mt-[1px] overflow-hidden z-40 rounded-4xl bg-[url(https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67f9c6586f1024288c4e6ed8_bg-cloud-64.avif)] bg-center bg-cover bg-no-repeat"
         >
           <div
             ref={centerCardContentRef}
@@ -107,7 +107,7 @@ function MiddleImageZoomSection() {
             <span className="text-sm px-4 py-1.5 rounded-full bg-black/20 text-gray-200">
               Personal Growth
             </span>
-            <h1 className="text-7xl font-bold max-w-3xl mt-6">
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold max-w-3xl mt-6">
               AI that understands your emotions
             </h1>
           </div>

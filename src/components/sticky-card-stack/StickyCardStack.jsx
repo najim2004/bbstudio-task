@@ -67,16 +67,16 @@ function StickyCardStack() {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen min-w-screen bg-[#e7e7e7] md:flex items-center justify-between lg:justify-around px-6 gap-6 py-10 md:py-0"
+      className="h-screen w-screen bg-[#e7e7e7] flex flex-col md:flex-row items-center justify-around px-6 gap-6 py-10 md:py-0"
     >
-      <div className="z-40 w-[26vw] h-[55vh] flex gap-6">
+      <div className="z-40 w-[80vw] md:w-[26vw] h-[55vh] flex gap-2 lg:gap-6">
         {images.map((image, idx) => (
           <img
             key={idx}
             ref={addToRefs}
             src={image}
             alt=""
-            className="rounded-3xl object-cover w-full h-full -ml-20 lg:ml-0"
+            className="rounded-3xl object-cover w-full h-full -ml-20 md:ml-0"
             style={{ zIndex: `${30 - idx}` }}
           />
         ))}
@@ -84,9 +84,9 @@ function StickyCardStack() {
 
       <div
         ref={textContentRef}
-        className="flex justify-end font-bdogrotesk-vf translate-x-40 opacity-0 w-full text-center md:text-start md:max-w-[40vw]"
+        className="flex justify-end font-bdogrotesk-vf translate-x-40 opacity-0 w-full md:max-w-[40vw]"
       >
-        <h2 className="text-2xl md:text-7xl font-bold text-gray-">
+        <h2 className="text-4xl md:text-7xl font-bold text-gray-700">
           Your mental wellness journey starts now
         </h2>
       </div>

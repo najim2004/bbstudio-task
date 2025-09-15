@@ -15,11 +15,13 @@ function FullScreenZoomEffect() {
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
-          start: "top top",
+          start: isMobile ? "center center" : "top top", // 📌 mobile হলে middle থেকে trigger
           end: "+=2000",
           scrub: 1,
         },
@@ -45,7 +47,7 @@ function FullScreenZoomEffect() {
   return (
     <div
       ref={sectionRef}
-      className="h-screen w-screen relative flex justify-center items-center"
+      className="h-[60vh] md:h-screen w-screen relative flex justify-center items-center"
     >
       {/* 1st or parent bg image */}
 
@@ -59,22 +61,22 @@ function FullScreenZoomEffect() {
 
         <div
           ref={upperLayerBgImg}
-          className="max-w-[90vw] max-h-[80vh] w-full h-full rounded-3xl border-2 border-white relative overflow-hidden flex justify-center items-center"
+          className="max-w-[90vw] max-h-[48vh] md:max-h-[80vh] w-full h-full rounded-3xl border-2 border-white relative overflow-hidden flex justify-center items-center"
         >
           <img
             src="https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67f9e24c2d1b01e097179829_bg-cloud-71.avif"
             alt=""
-            className="min-h-screen min-w-screen object-cover object-"
+            className="min-h-[60vh] md:min-h-screen min-w-screen object-cover object-"
           />
           <div
             ref={textContentDiv}
-            className="bg-white absolute bottom-10 left-10 rounded-3xl w-[25vw] h-[25vh] p-10 font-bdogrotesk-vf"
+            className="bg-white/93 absolute bottom-5 lg:bottom-10 left-5 lg:left-10 rounded-2xl w-[70vw] md:w-[55vw] lg:w-[25vw] h-[15vh] md:h-[27vh] lg:h-[25vh] p-4 md:p-10 font-bdogrotesk-vf"
           >
-            <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200">
+            <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200 text-gray-600">
               Personal Growth
             </span>
 
-            <h2 className="text-4xl font-semibold text-gray-700 mt-6">
+            <h2 className="text-xl md:text-4xl font-semibold text-gray-700 mt-3 md:mt-6">
               Feel more human <br />
               every day
             </h2>

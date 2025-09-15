@@ -41,15 +41,15 @@ function AnimatedCarousel() {
     return () => ctx.revert();
   }, []);
   return (
-    <div className="mt-20 grid grid-cols-2 grid-rows-12 min-h-[50vh] max-w-6xl mx-auto gap-3 font-bdogrotesk-vf">
-      <div className="h-[660px] row-span-12 rounded-3xl overflow-hidden">
+    <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 grid-rows-1 mg:grid-rows-12 min-h-[50vh] max-w-6xl mx-auto gap-3 font-bdogrotesk-vf px-4 md:px-8 lg:px-0">
+      <div className="h-[660px] lg:row-span-12 rounded-3xl overflow-hidden">
         <img
           src="https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67fd3b3b64ef722b8bd2b5c4_bg-cloud-77.avif"
           alt=""
           className="size-full object-cover"
         />
       </div>
-      <div className="bg-gray-100 row-span-8 rounded-3xl p-14 text-gray-700">
+      <div className="bg-gray-100 lg:row-span-8 rounded-3xl p-14 text-gray-700">
         <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200">
           Ready to automate?
         </span>
@@ -57,7 +57,7 @@ function AnimatedCarousel() {
           Stay on top of your recurring payments with ease
         </h1>
       </div>
-      <div className="row-span-4 rounded-3xl overflow-x-auto scrollbar-hide">
+      <div className="lg:row-span-4 rounded-3xl overflow-x-auto scrollbar-hide">
         <div ref={marqueeRef} className=" flex items-center gap-3 ">
           {[...images, ...images].map((image, idx) => (
             <img

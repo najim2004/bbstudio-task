@@ -3,54 +3,54 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="h-screen w-screen bg-[#1f3634] flex flex-col justify-between items-center font-bdogrotesk-vf">
+    <div className="h-screen w-screen bg-[#1f3634] flex flex-col justify-end lg:justify-between items-center font-bdogrotesk-vf">
       <img
         src="https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67f55a2e134ca608203f58ec_zuno-logo-green.svg"
         alt=""
-        className="w-[85vw] object-cover"
+        className="w-[85vw] object-cover hidden lg:block"
       />
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-7 justify-between gap-20">
-          <div className="col-span-2">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-7 justify-between lg:gap-20">
+          <div className="lg:col-span-2">
             <img
               src="https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67e725b86fdf9ee970fe1013_zuno-logo.svg"
               alt=""
               className="h-[14px]"
             />
           </div>
-          <div className="">
-            <h3 className="text-[#98a581] font-base font-medium pb-4">
+          <div className="flex border-b border-gray-200 py-4">
+            <h3 className="text-[#98a581] font-base font-medium pb-4 flex-1">
               Explore
             </h3>
-            <ul className="*:text-sm *:font-normal *:hover:border-b *:border-gray-50 *:w-max space-y-2 *:text-[#abb1a0]">
+            <ul className="flex-1 *:text-sm *:font-normal *:hover:border-b *:border-gray-50 *:w-max space-y-2 *:text-[#abb1a0]">
               <li>About Zuno</li>
               <li>Learn</li>
             </ul>
           </div>
-          <div className="">
-            <h3 className="text-[#98a581] font-base font-medium pb-4">
+          <div className="flex border-b border-gray-200 py-4">
+            <h3 className="flex-1 text-[#98a581] font-base font-medium pb-4">
               Company
             </h3>
-            <ul className="*:text-sm *:font-normal *:hover:border-b *:border-gray-50 *:w-max space-y-2 *:text-[#abb1a0]">
+            <ul className="flex-1 *:text-sm *:font-normal *:hover:border-b *:border-gray-50 *:w-max space-y-2 *:text-[#abb1a0]">
               <li>Careers</li>
               <li>Terms of service </li>
               <li>Privacy policy</li>
               <li> Contact us</li>
             </ul>
           </div>
-          <div className="">
-            <h3 className="text-[#98a581] font-base font-medium pb-4">
+          <div className="flex border-b border-gray-200 py-4">
+            <h3 className="flex-1 text-[#98a581] font-base font-medium pb-4">
               Follow us
             </h3>
-            <ul className="*:text-sm *:font-normal *:hover:border-b *:border-gray-50 *:w-max space-y-2 *:text-[#abb1a0]">
+            <ul className="flex-1 *:text-sm *:font-normal *:hover:border-b *:border-gray-50 *:w-max space-y-2 *:text-[#abb1a0]">
               <li>Instagram</li> <li>TikTok</li> <li>Twitter</li>
             </ul>
           </div>
-          <div className="col-span-2">
-            <h3 className="text-[#98a581] font-base font-medium pb-4">
+          <div className="lg:col-span-2 py-4">
+            <h3 className="flex-1 text-[#98a581] font-base font-medium pb-4">
               Newsletter
             </h3>
-            <div className="relative">
+            <div className="flex-1 relative">
               <input
                 placeholder="Email Address"
                 className="h-14 rounded-md w-full border border-[#536e6c] px-2.5 text-[#98a581]"
@@ -64,8 +64,8 @@ function Footer() {
             </p>
           </div>
         </div>
-        <hr className="my-9 border-[#536e6c]" />
-        <p className="text-xs text-gray-500 mb-10 text-center">
+        <hr className="my-3 lg:my-9 h-[1px] border-[#536e6c]" />
+        <p className="text-xs text-gray-500 mb-10">
           Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere
           erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est
           non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem
