@@ -32,53 +32,86 @@ const images = [
 ];
 
 const StaticCircularGallery = () => {
-  const radius = 35;
-  const totalImages = images.length * 2;
-
   return (
-    <section className="w-full h-screen relative flex justify-center items-center bg-white">
-      <div className="text-center z-10">
-        <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200">
-          Personal Growth
-        </span>
-        <div className="text-5xl font-semibold leading-[60px] mt-6">
-          A gentle space to <br /> understand yourself
+    <section className="w-screen min-h-screen">
+      <div className="w-full h-[100vw] flex justify-center gap-2 relative scale-[0.6]">
+        {images.slice(0, Math.floor(images.length / 2)).map((image, index) => (
+          <div
+            key={index}
+            className="h-[100vw] w-full flex flex-col justify-between absolute items-center"
+            style={{
+              transform: `rotate(-${index * 22 + 22}deg)`,
+            }}
+          >
+            <div className="h-[16vw] aspect-square">
+              <img
+                src={image.up}
+                className="size-full object-cover rounded-lg  scale-[0.8]"
+                alt=""
+              />
+            </div>
+
+            <div className="h-[16vw] aspect-square">
+              <img
+                src={image.down}
+                className="size-full object-cover rounded-lg  scale-[0.8]"
+                alt=""
+              />
+            </div>
+          </div>
+        ))}
+        <div className="h-[100vw] w-full flex flex-col justify-between absolute items-center">
+          <div className="h-[16vw] aspect-square">
+            <img
+              src={images[Math.ceil(images.length / 2)].up}
+              className="size-full object-cover rounded-lg  scale-[0.8]"
+              alt=""
+            />
+          </div>
+
+          <div className="h-[16vw] aspect-square">
+            <img
+              src={images[Math.ceil(images.length / 2)].down}
+              className="size-full object-cover rounded-lg  scale-[0.8]"
+              alt=""
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="absolute w-full h-full">
-        {images.flatMap((image, index) => {
-          const angleUp = ((index * 2) / totalImages) * 360;
-          const xUp = `${radius * Math.sin((angleUp * Math.PI) / 180)}vmin`;
-          const yUp = `${-radius * Math.cos((angleUp * Math.PI) / 180)}vmin`;
+        {/* text content */}
+        <div className="text-center z-10 max-w-[38vw] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[1.7] text-gray-700">
+          <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200">
+            Personal Growth
+          </span>
+          <div className="text-5xl font-semibold leading-[60px] mt-6">
+            A gentle space to understand yourself
+          </div>
+        </div>
+        {images.slice(Math.floor(images.length / 2)).map((image, index) => (
+          <div
+            key={index}
+            className="h-[100vw] w-full flex flex-col justify-between absolute items-center"
+            style={{
+              transform: `rotate(${index * 23 + 23}deg)`,
+            }}
+          >
+            <div className="h-[16vw] aspect-square">
+              <img
+                src={image.up}
+                className="size-full object-cover rounded-lg  scale-[0.8]"
+                alt=""
+              />
+            </div>
 
-          const angleDown = ((index * 2 + 1) / totalImages) * 360;
-          const xDown = `${radius * Math.sin((angleDown * Math.PI) / 180)}vmin`;
-          const yDown = `${
-            -radius * Math.cos((angleDown * Math.PI) / 180)
-          }vmin`;
-
-          return [
-            <img
-              key={`up-${index}`}
-              src={image.up}
-              className="w-[12vmin] aspect-square object-cover rounded-lg absolute top-1/2 left-1/2"
-              style={{
-                transform: `translate(-50%, -50%) translate(${xUp}, ${yUp}) rotate(${angleUp}deg)`,
-              }}
-              alt=""
-            />,
-            <img
-              key={`down-${index}`}
-              src={image.down}
-              className="w-[12vmin] aspect-square object-cover rounded-lg absolute top-1/2 left-1/2"
-              style={{
-                transform: `translate(-50%, -50%) translate(${xDown}, ${yDown}) rotate(${angleDown}deg)`,
-              }}
-              alt=""
-            />,
-          ];
-        })}
+            <div className="h-[16vw] aspect-square">
+              <img
+                src={image.down}
+                className="size-full object-cover rounded-lg  scale-[0.8]"
+                alt=""
+              />
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
