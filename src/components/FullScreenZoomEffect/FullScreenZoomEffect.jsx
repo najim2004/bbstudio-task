@@ -34,8 +34,9 @@ function FullScreenZoomEffect() {
         width: "25vw",
         duration: 3,
       });
-      tl.from(whiteBg.current, { opacity: 0, duration: 2 });
-      tl.from(textContentDiv.current, { opacity: 0, duration: 1, delay: -2 });
+      tl.addLabel("fadeIn")
+        .from(whiteBg.current, { opacity: 0, duration: 2 }, "fadeIn")
+        .from(textContentDiv.current, { opacity: 0, duration: 1 }, "fadeIn");
     }, sectionRef);
 
     return () => ctx.revert();
