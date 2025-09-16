@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
-import AnimatedCircularGallery from "./components/circle-card-animation/CircleCardAnimation";
+import CircleCardAnimation from "./components/circle-card-animation/CircleCardAnimation";
 import FullScreenZoomEffect from "./components/full-screen-zoom-effect/FullScreenZoomEffect";
 import StickyCardStack from "./components/sticky-card-stack/StickyCardStack";
 import AnimatedCarousel from "./components/animated-carousel/AnimatedCarousel";
@@ -19,7 +19,7 @@ function App() {
           <Navbar />
         </div>
         <Hero />
-        <AnimatedCircularGallery />
+        <CircleCardAnimation />
         <StickyCardStack />
         <FullScreenZoomEffect />
         <MiddleImageZoomSection />
