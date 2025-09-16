@@ -1,5 +1,7 @@
-import React from "react";
-
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useLayoutEffect, useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
 const images = [
   {
     up: "https://cdn.prod.website-files.com/675c8e48ca0e0fb5ab421239/67f9d38f41d04e272a8d2926_bg-cloud-66.avif",
@@ -32,86 +34,150 @@ const images = [
 ];
 
 const StaticCircularGallery = () => {
+  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
+  const textContentRef = useRef(null);
+  const imageDivsRef = useRef([]);
+  const addToRefs = (el) =>
+    el && !imageDivsRef.current.includes(el) && imageDivsRef.current.push(el);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top -15vw",
+            end: "+=3000",
+            scrub: 2,
+            pin: true,
+            markers: true,
+          },
+        })
+        .to(
+          imageDivsRef.current.slice(
+            0,
+            Math.floor(imageDivsRef.current.length / 2)
+          ),
+          {
+            rotate: (i) => -(i * 25.7 + 25.7),
+            translateX: 0,
+            duration: 1,
+          }
+        )
+        .to(
+          imageDivsRef.current.slice(
+            Math.ceil(imageDivsRef.current.length / 2)
+          ),
+          {
+            rotate: (i) => i * 25.7 + 25.7,
+            translateX: 0,
+            duration: 1,
+          },
+          0
+        )
+        .to(containerRef.current, {
+          scale: 0.6,
+          duration: 6,
+          rotate: -180,
+        })
+        .to(textContentRef.current, {
+          opacity: 1,
+          translateY: "-50%",
+          duration: 1,
+          ease: "none",
+        })
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-screen min-h-screen">
-      <div className="w-full h-[100vw] flex justify-center gap-2 relative scale-[0.6]">
+    <section ref={sectionRef} className="w-screen min-h-screen relative">
+      <div
+        ref={containerRef}
+        className="w-full h-[100vw] flex justify-center gap-2 relative z-10"
+      >
         {images.slice(0, Math.floor(images.length / 2)).map((image, index) => (
           <div
             key={index}
+            ref={addToRefs}
             className="h-[100vw] w-full flex flex-col justify-between absolute items-center"
-            style={{
-              transform: `rotate(-${index * 22 + 22}deg)`,
-            }}
+            style={{ transform: `translateX(-${index * 16.5 + 16.5}vw)` }}
           >
             <div className="h-[16vw] aspect-square">
               <img
                 src={image.up}
-                className="size-full object-cover rounded-lg  scale-[0.8]"
+                className="size-full object-cover rounded-4xl"
                 alt=""
               />
             </div>
 
-            <div className="h-[16vw] aspect-square">
+            <div className="h-[16vw] aspect-square  rotate-180">
               <img
                 src={image.down}
-                className="size-full object-cover rounded-lg  scale-[0.8]"
+                className="size-full object-cover rounded-4xl"
                 alt=""
               />
             </div>
           </div>
         ))}
-        <div className="h-[100vw] w-full flex flex-col justify-between absolute items-center">
+        <div
+          ref={addToRefs}
+          className="h-[100vw] w-full flex flex-col justify-between absolute items-center"
+        >
           <div className="h-[16vw] aspect-square">
             <img
               src={images[Math.ceil(images.length / 2)].up}
-              className="size-full object-cover rounded-lg  scale-[0.8]"
+              className="size-full object-cover rounded-4xl"
               alt=""
             />
           </div>
 
-          <div className="h-[16vw] aspect-square">
+          <div className="h-[16vw] aspect-square rotate-180">
             <img
               src={images[Math.ceil(images.length / 2)].down}
-              className="size-full object-cover rounded-lg  scale-[0.8]"
+              className="size-full object-cover rounded-4xl"
               alt=""
             />
           </div>
         </div>
 
-        {/* text content */}
-        <div className="text-center z-10 max-w-[38vw] mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[1.7] text-gray-700">
-          <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200">
-            Personal Growth
-          </span>
-          <div className="text-5xl font-semibold leading-[60px] mt-6">
-            A gentle space to understand yourself
-          </div>
-        </div>
-        {images.slice(Math.floor(images.length / 2)).map((image, index) => (
+        {images.slice(Math.ceil(images.length / 2)).map((image, index) => (
           <div
+            ref={addToRefs}
             key={index}
             className="h-[100vw] w-full flex flex-col justify-between absolute items-center"
-            style={{
-              transform: `rotate(${index * 23 + 23}deg)`,
-            }}
+            style={{ transform: `translateX(${index * 16.5 + 16.5}vw)` }}
           >
             <div className="h-[16vw] aspect-square">
               <img
                 src={image.up}
-                className="size-full object-cover rounded-lg  scale-[0.8]"
+                className="size-full object-cover rounded-4xl"
                 alt=""
               />
             </div>
 
-            <div className="h-[16vw] aspect-square">
+            <div className="h-[16vw] aspect-square rotate-180">
               <img
                 src={image.down}
-                className="size-full object-cover rounded-lg  scale-[0.8]"
+                className="size-full object-cover rounded-4xl"
                 alt=""
               />
             </div>
           </div>
         ))}
+      </div>
+      {/* text content */}
+      <div
+        ref={textContentRef}
+        className="z-40 opacity-0 text-center max-w-[38vw] mx-auto absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-[100vh] text-gray-700"
+      >
+        <span className="text-sm px-4 py-1.5 rounded-full bg-gray-200">
+          Personal Growth
+        </span>
+        <div className="text-5xl font-semibold leading-[60px] mt-6">
+          A gentle space to understand yourself
+        </div>
       </div>
     </section>
   );
